@@ -2,23 +2,42 @@
 
 ## Using IDE Run Configuration (Easier for Development)
 
-### IntelliJ IDEA / VS Code with Spring Boot:
+### IntelliJ IDEA - Step by Step:
 
 1. **Open Run Configurations**
-   - IntelliJ: Run → Edit Configurations
-   - VS Code: Debug Configuration
+   - Click **Run** → **Edit Configurations** (or press `Ctrl+Alt+R`)
 
-2. **Set Environment Variables** in the configuration:
-   ```
-   DB_HOST=localhost
-   DB_PORT=3306
-   DB_NAME=my_small_sm
-   DB_USERNAME=root
-   DB_PASSWORD=Joshjt
-   SERVER_PORT=8080
-   ```
+2. **Create New Application Configuration**
+   - Click the **+** button (top-left)
+   - Select **Application**
 
-3. **Run the application** - it will use these variables automatically
+3. **Configure the Application**
+   - **Name**: `Social Media Backend` (or any name)
+   - **Main class**: Select your main Spring Boot class (e.g., `backend.BackendApplication`)
+   - **Working directory**: Your project backend folder
+
+4. **Add Environment Variables**
+   - Find the **Environment variables** field
+   - Paste this complete string (using semicolons):
+   ```
+   DB_PASSWORD=Joshjt;DB_HOST=localhost;DB_PORT=3306;DB_NAME=my_small_sm;DB_USERNAME=root;SERVER_PORT=8080
+   ```
+   - **OR** click the **...** button to add them manually one by one:
+     - `DB_HOST` = `localhost`
+     - `DB_PORT` = `3306`
+     - `DB_NAME` = `my_small_sm`
+     - `DB_USERNAME` = `root`
+     - `DB_PASSWORD` = `Joshjt`
+     - `SERVER_PORT` = `8080`
+
+5. **Click OK** and then **Run** (green play button)
+   - The application will use these variables automatically
+
+### VS Code with Spring Boot:
+
+1. **Open Debug Configuration** in `.vscode/launch.json`
+2. **Add environment variables** to Spring Boot launch config
+3. Same variable names as above
 
 ---
 
